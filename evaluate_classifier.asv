@@ -1,0 +1,33 @@
+% evaluate_classifier.m
+function accuracy = evaluate_classifier(model, features, labels)
+    % Load normalization parameters if they exist
+    if exist('scripts/normalization.mat', 'file')
+        load('scripts/normalization.mat', 'mu', 'sigma');
+        features = (features - mu) ./ (sigma + eps);
+    end
+    
+    % Predict labels
+    predictedLabels = predict(model, features);
+    
+    % Calculate accuracy
+    accuracy = mean(predictedLabels == labels);
+    
+    % Plot confusion matrix
+    figure('Name', 'Confusion Matrix', 'Position', [100 100 600 500]);
+    confusionchart(labels, predictedLabels, ...
+                  'Title', 'Classification Results', ...
+                  'RowSummary', 'row-normalized', ...
+                  'ColumnSummary', 'column-normalized');
+    
+    % Display performance metrics
+    [cm, order] = confusionmat(labels, predictedLabels);
+    for i = 1:length(order)
+        precision = cm(i,i) / sum(cm(:,i));
+        recall = cm(i,i) / sum(cm(i,:));
+        f1 = 2 * (precision * recall) / (precision + recall);
+        
+        fprintf('%s Performance:\n', order(i));
+        fprintf('  Precision: %.2f%%, Recall: %.2f%%, F1: %.2f%%\n', ...
+                precision*100, recall*100, f1*100);
+    end
+end
