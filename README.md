@@ -49,9 +49,5 @@ A MATLAB-based machine learning system for classifying ambulance (🚑) and fire
 2. Add project directory to MATLAB path
 3. Execute `main.m` to run full pipeline
 
-## Results 📈
-![Confusion Matrix](results/confusion_matrix.png)  
-*Classification performance on test dataset*
-
 ## License ⚖️
 MIT License
