@@ -27,7 +27,8 @@ Core Components
         5-fold cross-validation ✅
 
 Repository Structure 📂
-<img width="525" height="318" alt="image" src="https://github.com/user-attachments/assets/b4ee1f2b-e2f6-4648-913e-711b6321f1d8" />
+
+<img width="967" height="311" alt="image" src="https://github.com/user-attachments/assets/1759eee4-3edc-4a9a-8903-152163a4e9b7" />
 
 Requirements 🔧
 
