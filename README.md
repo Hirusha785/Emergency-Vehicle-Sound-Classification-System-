@@ -1,4 +1,4 @@
-Emergency Vehicle Sound Classification System 🚨
+*Emergency Vehicle Sound Classification System 🚨*
 
 A MATLAB-based machine learning system for classifying ambulance (🚑) and firetruck (🚒) sounds using digital signal processing techniques.
 Technical Overview 📊
